@@ -1,0 +1,12 @@
+int a = 1;
+//test
+int b = 1;
+//test
+if (a == b)
+    cout << a << b << a + b << endl;
+else if (a <= b)
+    cout << a << b << a - b << endl;            //test
+else if (a >= b)
+    cout << a << b << a * b << endl;
+else if (a != b)
+    cout << a / b << end;
