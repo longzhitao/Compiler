@@ -7,7 +7,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-char input[255];
+char input[10000];
 char token[255];
 int p_input;
 int p_token;
@@ -20,8 +20,8 @@ typedef struct
 }Word;
 
 char *reserve_word[] = {
-        "begin", "if", "then", "while", "do",
-        "end", "int", "float", "double", "char",
+        "short", "if", "const", "while", "do",
+        "static", "int", "float", "double", "char",
         "return", "cout", "cin", "main", "for"
 
 };
@@ -255,7 +255,6 @@ int main() {
         while((scanf("%[^#]s", input)) != EOF){
             p_input = 0;
             printf("Your words: \n% s \n", input);
-
             while (over != 1000 && over != -1){
                 word = Scanner();
                 if (word->type_num < 1000)

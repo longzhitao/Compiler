@@ -10,3 +10,15 @@ else if (a >= b)
     cout << a << b << a * b << endl;
 else if (a != b)
     cout << a / b << end;
+    else if (a != b)
+        cout << a / b << end;
+
+else if (a != b)
+    cout << a / b << end;
+
+else if (a != b)
+    cout << a / b << end;
+
+else if (a != b)
+    cout << a / c << end;
+
