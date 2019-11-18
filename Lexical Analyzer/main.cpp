@@ -241,7 +241,6 @@ Word *Scanner(){
     return word;
 }
 
-
 int main() {
     int over = 1;
     Word* word;

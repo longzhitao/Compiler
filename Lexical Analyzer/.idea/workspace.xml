@@ -12,9 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86dac714-cc3a-4f00-8ebf-74f60f037837" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Lexical Analyzer.rar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,7 +71,18 @@
       <workItem from="1572069836690" duration="38000" />
       <workItem from="1572496873849" duration="291000" />
       <workItem from="1572571568010" duration="935000" />
+      <workItem from="1572661217815" duration="495000" />
+      <workItem from="1573524629920" duration="1256000" />
+      <workItem from="1573526128551" duration="6568000" />
     </task>
+    <task id="LOCAL-00001" summary="改变了输入字符长度">
+      <created>1572661524224</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1572661524225</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,5 +100,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="改变了输入字符长度" />
+    <option name="LAST_COMMIT_MESSAGE" value="改变了输入字符长度" />
   </component>
 </project>
