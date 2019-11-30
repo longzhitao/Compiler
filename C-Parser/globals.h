@@ -1,11 +1,13 @@
 //
-// Created by Lynn on 2019/11/27.
+// Created by Lynn on 2019/11/29.
 //
 
 #ifndef C_PARSER_GLOBALS_H
 #define C_PARSER_GLOBALS_H
 
-#include <string.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
 //单词种别码
 #define _SYN_MAIN           1
@@ -76,6 +78,5 @@ typedef struct WORD{                    //单词二元组
 extern char * strSource;
 extern char * strFileName;
 extern int gnRow,gnColumn,gnLocate,gnLocateStart;
-
 
 #endif //C_PARSER_GLOBALS_H

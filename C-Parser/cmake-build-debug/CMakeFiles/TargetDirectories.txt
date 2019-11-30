@@ -1,0 +1,3 @@
+G:/Code/Compiler/C-Parser/cmake-build-debug/CMakeFiles/edit_cache.dir
+G:/Code/Compiler/C-Parser/cmake-build-debug/CMakeFiles/C_Parser.dir
+G:/Code/Compiler/C-Parser/cmake-build-debug/CMakeFiles/rebuild_cache.dir

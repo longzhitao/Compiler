@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+G:/Code/Compiler/C-Parser/globals.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+G:/Code/Compiler/C-Parser/scan.cpp
+scan.h
+G:/Code/Compiler/C-Parser/scan.h
+globals.h
+G:/Code/Compiler/C-Parser/globals.h
+
+G:/Code/Compiler/C-Parser/scan.h
+iomanip
+-
+
+G:/Code/Compiler/C-Parser/semanteme.cpp
+semanteme.h
+G:/Code/Compiler/C-Parser/semanteme.h
+scan.h
+G:/Code/Compiler/C-Parser/scan.h
+
+G:/Code/Compiler/C-Parser/semanteme.h
+globals.h
+G:/Code/Compiler/C-Parser/globals.h
+
