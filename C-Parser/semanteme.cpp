@@ -28,8 +28,10 @@ void error(char *strError)                                  //输出扫描错误
 
 void Match(int syn,char *strError)                          //判断当前识别的单词是否需要的单词，不是报错，否则扫描下一个单词
 {
-    if(syn==uWord.syn)Scanner();
-    else error(strError);
+    if(syn == uWord.syn)
+        Scanner_without_print();
+    else
+        error(strError);
 }
 
 void gen(char *op,char *argv1,char *argv2,char *result)     //生成一个四元式
@@ -93,7 +95,7 @@ char * Expression()
 
     while(uWord.syn == _SYN_PLUS || uWord.syn == _SYN_MINUS){ //    + -
         sprintf(opp,"%c",uWord.value.T3);
-        Scanner();
+        Scanner_without_print();
 
         strcpy(eplace2, Term());
         strcpy(eplace, Newtemp());
@@ -111,7 +113,7 @@ char * Term(void)
 
     while(uWord.syn == _SYN_TIMES || uWord.syn == _SYN_DIVIDE){ //   * /
         sprintf(opp, "%c", uWord.value.T3);
-        Scanner();
+        Scanner_without_print();
         eplace2 = Factor();
         eplace = Newtemp();
         gen(opp, eplace1, eplace2, eplace);
@@ -129,7 +131,7 @@ char * Factor(void)
             sprintf(eplace, "%s", uWord.value.T1);
         else
             sprintf(eplace, "%d", uWord.value.T2);
-        Scanner();
+        Scanner_without_print();
 
     }
     else
@@ -159,7 +161,7 @@ void Condition(int * etc, int * efc)
                 sprintf(opp, "%s", uWord.value.T1);
                 break;
         }
-        Scanner();
+        Scanner_without_print();
         eplace2 = Expression();
         * etc = nNXQ;
         * efc = nNXQ+1;
@@ -178,7 +180,7 @@ void Statement(int * nChain)    //语句分析函数
     {
         case _SYN_ID:
             strcpy(strTemp, uWord.value.T1);
-            Scanner();
+            Scanner_without_print();
             Match(_SYN_ASSIGN, "=");
             strcpy(eplace, Expression());
             Match(_SYN_SEMICOLON, ";");
@@ -216,7 +218,7 @@ void Statement(int * nChain)    //语句分析函数
             Match(_SYN_INT,"int");
             while(uWord.syn != 36)
             {
-                Scanner();
+                Scanner_without_print();
             }
             Match(_SYN_SEMICOLON,";");
             gen("SMT","","","");
@@ -226,7 +228,7 @@ void Statement(int * nChain)    //语句分析函数
             Match(_SYN_CHAR,"char");
             while(uWord.syn != 36)
             {
-                Scanner();
+                Scanner_without_print();
             }
             Match(_SYN_SEMICOLON,";");
             gen("SMT","","","");
@@ -241,7 +243,7 @@ void Statement(int * nChain)    //语句分析函数
                   && uWord.syn != 5
                   && uWord.syn != 7)
             {
-                Scanner();
+                Scanner_without_print();
             }
             * nChain = 0;
         }
@@ -275,17 +277,17 @@ void Statement_Block(int * nChain) //语句块分析函数
 void Parse(void)
 {
     int nChain;
-    Scanner();
+    Scanner_without_print();
+    Match(_SYN_INT, "int");
     Match(_SYN_MAIN, "main");
     Match(_SYN_LPAREN, "(");
     Match(_SYN_RPAREN, ")");
     Statement_Block(&nChain);      //语句块分析函数
     if(uWord.syn != _SYN_END){
-        printf("源程序异常结束");
+        printf("\n源程序异常结束\n");
     }
 
-    printf("序列号\n");
-    printf("op     arg1    arg2    result");
+    printf("\n序列号   op     arg1    arg2    result\n");
 
     PrintQuaternion();
 
@@ -293,12 +295,14 @@ void Parse(void)
 
 void lrparse(void)           //语义语法分析函数
 {
+
     pQuad=(QUATERNION*)malloc(strlen(strSource)*sizeof(QUATERNION));
     nSuffix = 0;
     nfc = ntc = nNXQ = 1;
 
     ApartWord(strSource);
-    gnColumn = gnRow = 0;
+    gnColumn = 1;
+    gnRow = 0;
     gnLocate = gnLocateStart = 0;
     Parse();
 }

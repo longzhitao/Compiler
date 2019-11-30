@@ -28,7 +28,7 @@ void Do_EndOfLess(char * strSource);            //<,<=
 void Do_EndOfEnd(char * strSource);             //'\0' 源程序结束
 void PrintError(int nColumn, int nRow, char chInput);   //词法分析错误输出
 void Scanner();
-void scanner();
+bool isScanError = true;
 
 extern char * strSource;                        //源程序字符串
 int gnColumn,
@@ -378,6 +378,7 @@ void ApartWord(char * strSource)  //根据输入的源程序识别所有的单词
     {
         Scanner();
     }
+    isScanError = false;
 }
 
 void Scanner()
@@ -386,11 +387,16 @@ void Scanner()
     PrintWord(uWord);       
 }
 
+void Scanner_without_print(){
+    Do_Start(strSource);    //识别一个单词
+}
+
 
 //打印词法错误
 void PrintError(int nColumn, int nRow, char chInput)
 {
-
+    if (!isScanError)
+        return;
     printf("\nCol:%d  Row:%d :%c", nColumn, nRow, chInput);
-    printf("(未知单词)\n");
+    printf("(未知单词)");
 }
